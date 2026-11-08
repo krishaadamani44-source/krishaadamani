@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishaa Damani | Innovator, Researcher & Creative Polymath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card-bg: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #6b21a8; /* Deep royal purple accent */
+      --accent-light: #f3e8ff;
+      --border: #e5e7eb;
+      --radius: 16px;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(250, 250, 250, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Layout Sections */
+    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    .hero-btns { display: flex; gap: 1rem; }
+    .btn-primary {
+      background: var(--text);
+      color: white;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: #f3f4f6; }
+
+    /* Photo Frame */
+    .photo-card {
+      width: 100%;
+      height: 420px;
+      background: #e5e7eb;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Metrics Banner */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+    }
+    .stat-item h3 { font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+    .stat-item p { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+
+    /* Category Grid (Jayveer Style Cards) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 700; }
+    .card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .card-link {
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Art Shop Section */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .art-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .art-img {
+      height: 240px;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .art-info { padding: 1.5rem; }
+    .art-price { font-weight: 800; color: var(--accent); margin-top: 0.5rem; font-size: 1.1rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 868px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .hero p { margin: 0 auto 2rem; }
+      .hero-btns { justify-content: center; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">Krishaa Damani</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research & Books</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#art">Art Studio</a></li>
+        <li><a href="#awards">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div>
+      <span class="hero-tag">Student Researcher & Creative Innovator</span>
+      <h1>Driven by Curiosity. Building for Impact.</h1>
+      <p>I’m Krishaa Damani — exploring the intersection of technology, creative writing, research, and fine art. Welcome to my personal portfolio and archive of ongoing projects.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Let's Connect</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <!-- Replace the src below with your actual photo URL when ready -->
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Krishaa Damani">
+    </div>
+  </section>
+
+  <!-- Key Metrics / Stats (Jayveer Style) -->
+  <section style="padding: 0 2rem;">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>05+</h3>
+        <p>Research & Publications</p>
+      </div>
+      <div class="stat-item">
+        <h3>12+</h3>
+        <p>Global Achievements</p>
+      </div>
+      <div class="stat-item">
+        <h3>02</h3>
+        <p>Published Books</p>
+      </div>
+      <div class="stat-item">
+        <h3>20+</h3>
+        <p>Original Artworks</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Publications -->
+  <section id="research">
+    <div class="section-tag">Academic Work</div>
+    <h2 class="section-title">Research & Published Books</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-badge">Published Book</div>
+        <h3>Title of Your Book / Novel</h3>
+        <p>A short overview of your published book, theme, and key audience takeaways.</p>
+        <a href="#" class="card-link">Read Excerpt &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="card-badge">Research Paper</div>
+        <h3>Applied Technology & Innovation</h3>
+        <p>Summary of your academic paper, methodology, and key experimental findings.</p>
+        <a href="#" class="card-link">View Paper &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects & Exploration -->
+  <section id="projects">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Featured Projects & Initiatives</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-badge">Tech & Leadership</div>
+        <h3>Community Innovation Initiative</h3>
+        <p>An impactful student-led project built to address local community challenges through tech.</p>
+        <a href="#" class="card-link">Explore Initiative &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="card-badge">Writing & Media</div>
+        <h3>Editorial & Thought Leadership</h3>
+        <p>Articles, essays, and publications written on youth leadership, art, and global policy.</p>
+        <a href="#" class="card-link">Read Articles &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Art Studio Vault -->
+  <section id="art">
+    <div class="section-tag">Creative Vault</div>
+    <h2 class="section-title">Original Paintings & Artwork</h2>
+    <div class="art-grid">
+      <div class="art-card">
+        <div class="art-img">Painting Image 1</div>
+        <div class="art-info">
+          <h3>Abstract Horizon</h3>
+          <p style="color: var(--muted); font-size: 0.85rem;">Acrylic on Canvas (24x36")</p>
+          <div class="art-price">$350</div>
+        </div>
+      </div>
+      <div class="art-card">
+        <div class="art-img">Painting Image 2</div>
+        <div class="art-info">
+          <h3>Symphony in Blue</h3>
+          <p style="color: var(--muted); font-size: 0.85rem;">Oil on Canvas (18x24")</p>
+          <div class="art-price">$280</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="awards">
+    <div class="section-tag">Recognition</div>
+    <h2 class="section-title">Awards & Honors</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-badge">2025</div>
+        <h3>National Youth Leadership Award</h3>
+        <p>Recognized for outstanding academic excellence and community impact initiatives.</p>
+      </div>
+      <div class="card">
+        <div class="card-badge">2024</div>
+        <h3>International Art & Design Honor</h3>
+        <p>Awarded for excellence in original visual storytelling and fine arts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="text-align: center;">
+    <div class="section-tag">Connect</div>
+    <h2 class="section-title">Let’s Work Together</h2>
+    <p style="color: var(--muted); max-width: 500px; margin: 0 auto 2rem;">Interested in collaborating on research, acquiring artwork, or discussing future projects?</p>
+    <a href="mailto:krishaadamani@gmail.com" class="btn-primary">Send an Email</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Krishaa Damani. All rights reserved. | krishaadamani.com</p>
+  </footer>
+
+</body>
+</html>
